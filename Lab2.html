@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+    .topform {
+        margin-top: -2%;
+        width: 50%;
+    }
+
+    .down {
+        margin-top: 1.5%;
+    }
+
+    .small {
+        width: 75px;
+    }
+
+    .smaller {
+        width: 50px;
+    }
+</style>
+
+<body>
+    <form action="https://httpbin.org/get">
+        <fieldset class="topform">
+            <br>
+
+            <label for="fname">
+                <b>แบบฟอร์มจองทัวร์</b>
+            </label><br>
+
+            <fieldset class="down">
+
+                <legend>ข้อมูลทั่วไป</legend>
+
+                <label for="">ชื่อ-สกุล:</label><br>
+                <input type="text" name="name" placeholder="กรอกชื่อ-สกุล" required> *<br>
+
+                <label for="">Email:</label><br>
+                <input type="email" name="Email" required> *<br>
+
+                <label for="">โทรศัพท์:</label><br>
+                <input type="text" name="phone-number" value="+66" pattern="\+66[0-9]{9}" required> *<br>
+
+                <label for="">ที่อยู่:</label><br>
+                <textarea rows="3" cols="30" name="address"></textarea><br>
+
+                <label for="">รห้สไปรษณีย์:</label>
+                <input type="text" name="postal-code" class="small" pattern="[0-9]{5}"><br>
+
+                <label for="">รูปผู้จอง:</label>
+                <input type="file" name="file"><br>
+
+            </fieldset>
+
+            <fieldset class="down">
+
+                <legend>ข้อมูลเข้าสู่ระบบ</legend>
+
+                <label for="">Username:</label><br>
+                <input type="text" name="Username" required pattern="\w{8,}"><br>
+                <label for="">
+                    <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ ตั้งแต่ 8 ตัวขึ้นไป</i>
+                </label><br>
+
+                <label for="">Password:</label><br>
+                <input type="password" name="password" required pattern=".{8,}"><br>
+                <label for="">
+                    <i>ประกอบด้วยอักขระอะไรก็ได้ 8 ตัวขึ้นไป</i>
+                </label>
+
+            </fieldset>
+
+            <fieldset class="down">
+
+                <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+
+                <label for="">แพคเก็จทัวร์:</label>
+                <select name="package">
+                    <option value="select" selected>--select--</option>
+                    <option value="สหรัฐอเมริกา">สหรัฐอเมริกา</option>
+                    <option value="อังกฤษ">อังกฤษ</option>
+                    <option value="สเปน">สเปน</option>
+                    <option value="อิตาลี">อิตาลี</option>
+                    <option value="ฝรั่งเศส">ฝรั่งเศส</option>
+                </select>
+
+                <br>
+                <label for="">วันที่เดินทาง:</label>
+                <input type="date" name="Date">
+
+                <br>
+                <label for="">จำนวนผู้เดินทาง:</label>
+                <input type="number" class="smaller" name="people" min="1" max="10">
+
+                <br>
+                <label for="">เน้นการท่องเที่ยวแบบใด?</label>
+                <br>
+                <input type="checkbox" name="travel" value="ชอปปิ้ง" id="1">
+                <label for="1">ชอปปิ้ง</label>
+                <br>
+                <input type="checkbox" name="travel" value="ธรรมชาติ" id="2">
+                <label for="2">ธรรมชาติ</label>
+                <br>
+                <input type="checkbox" name="travel" value="ทะเล" id="3">
+                <label for="3">ทะเล</label>
+
+            </fieldset>
+
+            <label for="">ยอมรับเงื่อนไขและข้อตกลง</label>
+            <input type="radio" name="agreement" value="I agree" id="4" checked>
+            <label for="4">I agree</label>
+            <input type="radio" name="agreement" value="I disagree" id="5">
+            <label for="5">I disagree</label>
+            &nbsp;
+            <input type="submit" value="จอง">
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
